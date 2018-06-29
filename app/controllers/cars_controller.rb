@@ -28,4 +28,20 @@ class CarsController < ApplicationController
     redirect_to '/status'
   end
 
+  def light_toggle
+    car = YAML.load(cookies[:car])
+    car.light_toggle
+    cookies[:car] = car.to_yaml
+    redirect_to '/status'
+  end
+
+  def parking_toggle
+    car = YAML.load(cookies[:car])
+    car.parking_toggle
+    cookies[:car] = car.to_yaml
+    redirect_to '/status'
+  end
+
+
+
 end

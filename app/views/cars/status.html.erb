@@ -1,9 +1,22 @@
 <h1>Your car is:</h1>
 <h2><%= @car.model %> <%= @car.make %></h2>
-<h3>You're going <%= @car.speed %> MPH.</h3>
+<h3>speed: <%= @car.speed %>km/h</h3>
+<h3>lights: <%= @car.light_toggle %></h3>
 <form action="/cars/accelerate" method="get">
 <button type="submit" name="accelerate">Accelerate</button>
 </form>
 <form action="/cars/decelerate" method="get">
   <button type="submit" name="decelerate">Brake</button>
+</form>
+<form action="/cars/light_toggle" method="get">
+  <button type="submit" name="light_toggle">Lights</button>
+</form>
+<form action="/cars/parking_toggle" method="get">
+  <label for="released">Released</label>
+  <input type="radio" name="parking_toggle" id="released" value="released" />
+  <br />
+  <label for="set">Set</label>
+  <input type="radio" name="parking_toggle" id="set" value="set" />
+  <br />
+  <button type="submit" name="parking_toggle">Set Parking Brake</button>
 </form>
